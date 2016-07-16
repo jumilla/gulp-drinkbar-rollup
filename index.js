@@ -39,7 +39,7 @@ var defaultBundleOptions = {
 	moduleName: 'main'
 };
 
-module.exports = function rollupStream() {
+function rollupStream() {
 	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	if (typeof options === 'string') {
@@ -82,7 +82,9 @@ module.exports = function rollupStream() {
 	};
 
 	return _through2.default.obj(transform);
-};
+}
 
 rollupStream.nodeResolve = _rollupPluginNodeResolve2.default;
 rollupStream.commonjs = _rollupPluginCommonjs2.default;
+
+module.exports = rollupStream;

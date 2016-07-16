@@ -27,7 +27,7 @@ const defaultBundleOptions = {
 
 
 
-module.exports = function rollupStream(options = {}) {
+function rollupStream(options = {}) {
 	if (typeof options === 'string') {
 		options = {dest: options}
 	}
@@ -77,3 +77,6 @@ module.exports = function rollupStream(options = {}) {
 rollupStream.nodeResolve = nodeResolve
 rollupStream.commonjs = commonjs
 
+
+
+module.exports = rollupStream
