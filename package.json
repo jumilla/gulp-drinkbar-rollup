@@ -1,0 +1,49 @@
+{
+  "name": "gulp-drinkbar-rollup-stream",
+  "version": "0.1.0",
+  "author": {
+    "name": "Fumio Furukawa"
+  },
+  "description": "rollup stream for gulp-drinkbar",
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "gulp-drinkbar",
+    "rollup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jumilla/gulp-drinkbar-rollup.git"
+  },
+  "homepage": "https://github.com/jumilla/gulp-drinkbar-rollup",
+  "bugs": {
+    "url": "https://github.com/jumilla/gulp-drinkbar-rollup/issues"
+  },
+  "maintainers": [
+    {
+      "email": "fumio@jumilla.me",
+      "name": "Fumio Furukawa"
+    }
+  ],
+  "dependencies": {
+    "object-assign": "^4.1.0",
+    "rollup": "^0.34.1",
+    "rollup-plugin-commonjs": "^3.1.0",
+    "rollup-plugin-node-resolve": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "mocha": "^2.5.3"
+  },
+  "scripts": {
+    "build": "babel src -d lib --source-maps-inline",
+    "watch": "babel src -d lib --source-maps-inline --watch",
+    "test": "mocha --compilers js:babel-core/register"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js"
+}
