@@ -27,7 +27,11 @@ const defaultBundleOptions = {
 
 
 
-module.exports = function (options = {}) {
+module.exports = function rollupStream(options = {}) {
+	if (typeof options === 'string') {
+		options = {dest: options}
+	}
+
 	const transform = function (file, encode, done) {
 		const stream = this
 
@@ -48,7 +52,7 @@ module.exports = function (options = {}) {
 					const result = bundle.generate(bundleOptions)
 
 					if (options.dest) {
-						file.path = options.dest
+						file.path = file.base + options.dest
 					}
 					file.contents = new Buffer(result.code)
 					file.sourcemap = result.map
@@ -65,17 +69,11 @@ module.exports = function (options = {}) {
 		}
 	}
 
-	const flush = function(done) {
-		console.log('flush')
-
-		done()
-	}
-
 	return through.obj(transform)
 }
 
 
 
-module.exports.nodeResolve = nodeResolve
-module.exports.commonjs = commonjs
+rollupStream.nodeResolve = nodeResolve
+rollupStream.commonjs = commonjs
 

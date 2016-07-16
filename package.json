@@ -1,6 +1,6 @@
 {
   "name": "gulp-drinkbar-rollup-stream",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "author": {
     "name": "Fumio Furukawa"
   },
@@ -38,12 +38,12 @@
     "mocha": "^2.5.3"
   },
   "scripts": {
-    "build": "babel src -d lib --source-maps-inline",
-    "watch": "babel src -d lib --source-maps-inline --watch",
+    "build": "babel src -d . --source-maps-inline",
+    "watch": "babel src -d . --source-maps-inline --watch",
     "test": "mocha --compilers js:babel-core/register"
   },
   "files": [
-    "lib"
+    "index.js"
   ],
-  "main": "lib/index.js"
+  "main": "index.js"
 }

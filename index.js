@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = rollupStream;
+
 var _through = require('through2');
 
 var _through2 = _interopRequireDefault(_through);
@@ -39,8 +44,13 @@ var defaultBundleOptions = {
 	moduleName: 'main'
 };
 
-module.exports = function () {
+//	exports: 'none',
+function rollupStream() {
 	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	if (typeof options === 'string') {
+		options = { dest: options };
+	}
 
 	var transform = function transform(file, encode, done) {
 		var stream = this;
@@ -60,7 +70,7 @@ module.exports = function () {
 					var result = bundle.generate(bundleOptions);
 
 					if (options.dest) {
-						file.path = options.dest;
+						file.path = file.base + options.dest;
 					}
 					file.contents = new Buffer(result.code);
 					file.sourcemap = result.map;
@@ -77,14 +87,8 @@ module.exports = function () {
 		}
 	};
 
-	var flush = function flush(done) {
-		console.log('flush');
-
-		done();
-	};
-
 	return _through2.default.obj(transform);
-};
+}
 
-module.exports.nodeResolve = _rollupPluginNodeResolve2.default;
-module.exports.commonjs = _rollupPluginCommonjs2.default;
+rollupStream.nodeResolve = _rollupPluginNodeResolve2.default;
+rollupStream.commonjs = _rollupPluginCommonjs2.default;
