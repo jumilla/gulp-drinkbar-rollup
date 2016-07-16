@@ -1,10 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = rollupStream;
-
 var _through = require('through2');
 
 var _through2 = _interopRequireDefault(_through);
@@ -44,8 +39,7 @@ var defaultBundleOptions = {
 	moduleName: 'main'
 };
 
-//	exports: 'none',
-function rollupStream() {
+module.exports = function rollupStream() {
 	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	if (typeof options === 'string') {
@@ -88,7 +82,7 @@ function rollupStream() {
 	};
 
 	return _through2.default.obj(transform);
-}
+};
 
 rollupStream.nodeResolve = _rollupPluginNodeResolve2.default;
 rollupStream.commonjs = _rollupPluginCommonjs2.default;
