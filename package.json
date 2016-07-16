@@ -1,6 +1,6 @@
 {
-  "name": "gulp-drinkbar-rollup-stream",
-  "version": "0.1.5",
+  "name": "gulp-drinkbar-rollup",
+  "version": "0.1.6",
   "author": {
     "name": "Fumio Furukawa"
   },

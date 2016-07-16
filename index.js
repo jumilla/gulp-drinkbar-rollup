@@ -22,13 +22,9 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _vinyl = require('vinyl');
-
-var _vinyl2 = _interopRequireDefault(_vinyl);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PLUGIN_NAME = 'drinkbar-stream-rollup';
+var PLUGIN_NAME = 'gulp-drinkbar-rollup';
 
 var defaultRollupOptions = {
 	plugins: [(0, _rollupPluginNodeResolve2.default)({ jsnext: true }), (0, _rollupPluginCommonjs2.default)()]

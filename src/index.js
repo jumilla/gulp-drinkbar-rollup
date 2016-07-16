@@ -1,5 +1,5 @@
 
-const PLUGIN_NAME = 'drinkbar-stream-rollup'
+const PLUGIN_NAME = 'gulp-drinkbar-rollup'
 
 import through from 'through2'
 import gutil from 'gulp-util'
@@ -7,7 +7,6 @@ import {rollup} from 'rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import assing from 'object-assign'
-import File from 'vinyl'
 
 
 
