@@ -1,6 +1,6 @@
 {
   "name": "gulp-drinkbar-rollup",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "author": {
     "name": "Fumio Furukawa"
   },
@@ -26,13 +26,14 @@
     }
   ],
   "dependencies": {
+    "gulp-drinkbar": "^1.0.0",
     "object-assign": "^4.1.0",
     "rollup": "^0.34.1",
-    "rollup-plugin-commonjs": "^3.1.0",
+    "rollup-plugin-commonjs": "^3.3.1",
     "rollup-plugin-node-resolve": "^1.7.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.10.1",
+    "babel-cli": "^6.11.4",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "mocha": "^2.5.3"
