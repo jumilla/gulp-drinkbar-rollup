@@ -1,6 +1,6 @@
 {
   "name": "gulp-drinkbar-rollup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Fumio Furukawa"
   },
@@ -30,6 +30,7 @@
     "object-assign": "^4.1.0",
     "rollup": "^0.34.1",
     "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-json": "^2.0.1",
     "rollup-plugin-node-resolve": "^1.7.1"
   },
   "devDependencies": {
@@ -44,7 +45,9 @@
     "test": "mocha --compilers js:babel-core/register"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "src"
   ],
-  "main": "index.js"
+  "main": "index.js",
+  "jsnext:main": "src/index.js"
 }

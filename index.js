@@ -18,6 +18,10 @@ var _rollupPluginCommonjs = require('rollup-plugin-commonjs');
 
 var _rollupPluginCommonjs2 = _interopRequireDefault(_rollupPluginCommonjs);
 
+var _rollupPluginJson = require('rollup-plugin-json');
+
+var _rollupPluginJson2 = _interopRequireDefault(_rollupPluginJson);
+
 var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
@@ -82,5 +86,6 @@ function rollupStream() {
 
 rollupStream.nodeResolve = _rollupPluginNodeResolve2.default;
 rollupStream.commonjs = _rollupPluginCommonjs2.default;
+rollupStream.json = _rollupPluginJson2.default;
 
 module.exports = rollupStream;
